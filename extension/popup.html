@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      width: 300px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      padding: 16px;
+    }
+    
+    h1 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #000;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 150ms ease;
+      user-select: none;
+    }
+    
+    .checkbox-item:hover {
+      background: #f0f0f0;
+    }
+    
+    .checkbox-item input[type="checkbox"] {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      accent-color: #1da1f2;
+    }
+    
+    .checkbox-item label {
+      cursor: pointer;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #000;
+      font-weight: 500;
+    }
+    
+    .sentiment-badge {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    
+    .sentiment-badge.positive {
+      background: #18a558;
+    }
+    
+    .sentiment-badge.neutral {
+      background: #ffc300;
+    }
+    
+    .sentiment-badge.negative {
+      background: #d3382f;
+    }
+    
+    .info-text {
+      font-size: 12px;
+      color: #666;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+    }
+    
+    button {
+      margin-top: 12px;
+      width: 100%;
+      padding: 8px 12px;
+      background: #1da1f2;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 150ms ease;
+    }
+    
+    button:hover {
+      background: #1a8cd8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hide Posts by Sentiment</h1>
+  
+  <div class="checkbox-group">
+    <div class="checkbox-item">
+      <input type="checkbox" id="hidePositive" name="hidePositive">
+      <label for="hidePositive">
+        <span class="sentiment-badge positive"></span>
+        Hide Positive Posts
+      </label>
+    </div>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="hideNeutral" name="hideNeutral">
+      <label for="hideNeutral">
+        <span class="sentiment-badge neutral"></span>
+        Hide Neutral Posts
+      </label>
+    </div>
+    
+    <div class="checkbox-item">
+      <input type="checkbox" id="hideNegative" name="hideNegative">
+      <label for="hideNegative">
+        <span class="sentiment-badge negative"></span>
+        Hide Negative Posts
+      </label>
+    </div>
+  </div>
+  
+  <button id="resetBtn">Reset All</button>
+  
+  <div class="info-text">
+    Posts matching selected sentiments will be hidden from the feed.
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

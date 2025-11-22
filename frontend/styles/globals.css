@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+:root {
+  /* Professional & Positive Palette */
+  --background: #F8FAFC; /* Slate 50 - Clean, bright background */
+  --foreground: #0F172A; /* Slate 900 - High contrast text */
+  
+  /* Primary: Indigo - Trustworthy, professional, yet vibrant */
+  --primary: #6366F1; 
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary: Teal - Fresh, positive, growth-oriented */
+  --secondary: #14B8A6; 
+  --secondary-foreground: #FFFFFF;
+  
+  /* Accent: Amber - Energetic, attention-grabbing without being aggressive */
+  --accent: #F59E0B; 
+  --accent-foreground: #FFFFFF;
+
+  /* Surface: Pure white for cards/sections to pop against the off-white bg */
+  --surface: #FFFFFF;
+  --surface-foreground: #1E293B;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+
+  /* Font variables will be defined in the Next.js font loader */
+  --font-display: var(--font-outfit);
+  --font-body: var(--font-jakarta);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-specific helpers */
+html, body {
+  -webkit-text-size-adjust: 100%; /* Prevent iOS text zoom */
+}
+
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+.wrap-break-word {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Improve focus outlines for accessibility on mobile */
+button:focus, input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  border-radius: 0.75rem;
+}
+
+/* Remove the gray highlight on iOS during taps for buttons/links */
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), sans-serif;
+}
+
+/* Custom scrollbar to match theme */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
